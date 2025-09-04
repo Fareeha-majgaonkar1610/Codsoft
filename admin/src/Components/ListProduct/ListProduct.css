@@ -1,0 +1,186 @@
+.list-product { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%; 
+    max-width: 1400px; /* Prevent excessive width on large screens */
+    height: 740px; 
+    padding: 20px 60px; 
+    margin: 30px auto; /* Center the container */
+    border-radius: 8px; 
+    background: white; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+} 
+ 
+.list-products-format-main { 
+    display: grid; 
+    grid-template-columns: 1fr 3fr 1.2fr 1.2fr 1.2fr 0.8fr; /* Better proportions for laptop */
+    gap: 15px; 
+    width: 100%; 
+    padding: 25px 15px; 
+    color: #454545; 
+    font-size: 16px; 
+    font-weight: 600;
+    border-bottom: 2px solid #f0f0f0; /* Visual separator */
+    align-items: center;
+} 
+ 
+.list-product-format { 
+    display: grid; 
+    grid-template-columns: 1fr 3fr 1.2fr 1.2fr 1.2fr 0.8fr; /* Match header */
+    gap: 15px; 
+    align-items: center; 
+    font-weight: 500; 
+    padding: 15px 15px;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background-color 0.2s ease;
+} 
+
+.list-product-format:hover {
+    background-color: #fafafa;
+}
+ 
+.list-product-product-icon { 
+    height: 80px; 
+    width: auto;
+    object-fit: contain;
+} 
+ 
+.list-product-remove-icon { 
+    cursor: pointer; 
+    margin: auto;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+} 
+
+.list-product-remove-icon:hover {
+    background-color: #fee;
+    color: #e53e3e;
+}
+ 
+.list-product-allproducts{ 
+    overflow-y: auto; 
+    width: 100%;
+    flex: 1;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e0 #f7fafc;
+} 
+
+/* Custom scrollbar for webkit browsers */
+.list-product-allproducts::-webkit-scrollbar {
+    width: 6px;
+}
+
+.list-product-allproducts::-webkit-scrollbar-track {
+    background: #f7fafc;
+    border-radius: 3px;
+}
+
+.list-product-allproducts::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 3px;
+}
+
+.list-product-allproducts::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+/* Large desktop screens (1440px and above) */
+@media (min-width: 1440px) {
+    .list-product {
+        padding: 30px 80px;
+        height: 800px;
+        border-radius: 12px;
+    }
+    
+    .list-products-format-main {
+        font-size: 17px;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+    
+    .list-product-format {
+        padding: 18px 20px;
+        gap: 20px;
+    }
+    
+    .list-product-product-icon {
+        height: 90px;
+    }
+}
+
+/* Standard laptop screens (1024px to 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .list-product {
+        padding: 25px 70px;
+        height: 760px;
+    }
+    
+    .list-products-format-main {
+        font-size: 16px;
+        gap: 18px;
+    }
+    
+    .list-product-format {
+        gap: 18px;
+    }
+}
+
+/* Medium screens (801px to 1023px) */
+@media (min-width: 801px) and (max-width: 1023px) {
+    .list-product {
+        padding: 20px 50px;
+        height: 720px;
+    }
+    
+    .list-products-format-main {
+        font-size: 15px;
+        gap: 12px;
+        grid-template-columns: 0.8fr 2.5fr 1fr 1fr 1fr 0.6fr;
+    }
+    
+    .list-product-format {
+        gap: 12px;
+        grid-template-columns: 0.8fr 2.5fr 1fr 1fr 1fr 0.6fr;
+    }
+    
+    .list-product-product-icon {
+        height: 70px;
+    }
+}
+ 
+/* Small screens and mobile (800px and below) */
+@media (max-width: 800px) { 
+    .list-product { 
+        box-sizing: border-box; 
+        width: 95%; 
+        height: 100%; 
+        padding: 15px 20px; 
+        margin: 20px auto; 
+        border-radius: 6px;
+    } 
+ 
+    .list-products-format-main { 
+        padding: 15px 10px; 
+        color: #454545; 
+        font-size: 12px;
+        gap: 8px;
+        grid-template-columns: 0.6fr 2fr 0.8fr 0.8fr 0.8fr 0.4fr;
+    } 
+    
+    .list-product-format {
+        padding: 12px 10px;
+        gap: 8px;
+        grid-template-columns: 0.6fr 2fr 0.8fr 0.8fr 0.8fr 0.4fr;
+        font-size: 12px;
+    }
+ 
+    .list-product-product-icon { 
+        height: 50px; 
+    }
+    
+    .list-product-remove-icon {
+        padding: 6px;
+    }
+}
